@@ -1,2 +1,17 @@
+# Environment Variable
 env/
+
+# JetBrains Stuff
 .idea
+
+# Testing
+src/test.py
+src/test_prompt.py
+src/test_tfserving.py
+
+# Models
+models/normalised_rater1_domain1
+models/normalised_rater2_domain1
+
+# Tokenizer
+glove.6B.100d.txt
