@@ -2,7 +2,7 @@
 Using LSTMs to automatically grade [Kaggle's ASAP Essays](https://www.kaggle.com/c/asap-aes).
 
 ## Models
-Pre-trained models can be downloaded from [here](https://www.kaggle.com/c/asap-aes).
+Pre-trained models can be downloaded from [here](https://drive.google.com/drive/folders/1EhMNLRuOnNOSHutVZrHMvkSiMAtlOXJ7?usp=sharing).
 
 ## Training
 1. Download GloVe's 6B.100d word vectors from [here](https://nlp.stanford.edu/projects/glove/). You can also train on 840B.300d for better results.
