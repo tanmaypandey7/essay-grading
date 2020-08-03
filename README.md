@@ -12,15 +12,11 @@ Pre-trained models can be downloaded from [here](https://drive.google.com/drive/
 ## Usage
 
 ### app.py
-NOTE : Run docker command (Multi-model or Multi-model + Batching config) before running this
-```
-curl -H "Content-Type: application/json" -X POST -d '{"essay":"xyz"}' http://0.0.0.0:12000/API_NAME
-```
-
 #### Start Docker
 ```
 sudo service docker start
 ```
+Run one of the three commands-
 
 #### Single model -
 ```
