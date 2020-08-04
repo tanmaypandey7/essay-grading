@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
 <body>
 <hgroup>
     <h1>Essay Grader</h1>
-    <h3>By Tanmay</h3>
+    <h3><a href="https://github.com/tanmaypandey7/essay-grading" target="_blank">Made By Tanmay</a></h3>
 </hgroup>
-<div class="input"></div>
-<form action="{{ url_for('rater1') }}" method="post">
+<div class="container">
+<form action="{{ url_for('rater1') }}" method="post" >
+    <div class="col-md-15 order-md-1">
+        <div class="mb-3">
+            <select class="custom-select d-block w-100" id="essays" >
+                <option value="">Choose...</option>
+                <option value="There a lot of things to life and sometimes we do need as much help as we can get. Sometimes people will do anything to get help or go anywhere to find it. Because when people feel lost it's the most scraest thing to a person. So they turn to reading books, listening to music, watching movies, also looking and reading magazins. But although thats not the best way you can go there times when you need to listen to your soul the most. Now there was a time when know one knew how to read or even was a loud to read. But now adays reading as taking over. If you can read you can do anything , you could be the one to run to whole world one day if you read things right. Books and magazins there are is not a big different between the two. Books can take you mind off some where that you  have never seen before and places like the wild, @LOCATION2, @LOCATION1, @CAPS1's, and high up and trees. It teaches you @LOCATION1 thing  but not every thing it teaches is good. Books can lie about whats about to happen to the world. Now magazing show you what all the starts are doing and how there living and what there house looks like and there money their begin home. There one thing you have to understand you can't always get scraed and thing what you reading is right you have to read your mind it see what it says about what you just read. When you hear your favtor song what do you or when you see your favtor movie? Do start dancing or do you cry when they break up, do you say I can sing like her or do you rein act the part in the movie. These things can help you or make you think about things you shouldn't do to people or even to yourself. Music can make you think about what your life has been throw or miss the person that  has died because they listen to that one song so much. Music can talk you in to killing yourself drive you crazy, hurt your soul when hear what someone else has been throw. Its all about how you take the song when you first hear it and take the messages out of it. Movies show history and show you want happens to people when they do the wrong things what will happen to them. There could be a ican in the movie your watching and could want to be like him/her. But not everyone you see you shouldn't want to be like them. You have to be yourself at the end of the day. Because you wake up looking at you everyday and love you everyday and take care of you everyday. When it's all said and done you have to belive in yourself and  not listen to what everyone is trying you. Go with you soul. Yes listening to it or read or even watching ir but just remember flow your deams and do what you love. So thants what I thing about music,books,movie and magazing listen but don't listen at the same tim">There a lot of things to life...</option>
+                <option value="Every we go there is censorship. Childrean hear their parents saying them and are more than likely to repeat them. Children should know what cursing is and know it is not right to do. It should be up to the children what they read. Books should be censored if they are made for children. Adults should have the option of reading any type of book they would like. Children who have been secluded should learn that curse words are a part of reality also. We can learn something from any thing we read. There are a lot of facts teachers do not teach that books can. When uncensensored things are said aloud children are estatic. If they read themselves they would learn alot more. If your parents do not inform you either, you can miss out on some of the most important facts of life. It is very unnecessary to have rated @CAPS1 movies.Parents should be able to watch a mature movie with their children without being on the watch for something they do not want their child to see. The choice of children watching censory movies should definitely be on the parent. I always think it is a bad idea to have derrogatory pictures on magazines. These photos @MONTH1 give children negative thought, such as insecurity of wishing they looked better than the model. Children remember almost everthing they hear/see. It should be up to the children what they read.">Every we go there is censorship...</option>
+                <option value="Should there be censorship in libraries? Some say there should be, some do not. Cultural books and magazines could be offensive to some readers. History in books can sometimes even be offensive depending on someones lifestyle or background. Are you wrong if you say you want censorship in the library? No, you are not wrong because there are many people who think that some books should be taken off of the shelves of there local libraries. Some of there reasons are because parents could have young children and they do not want to expose them to such things while they are young and vulnerable. Others though say that censorship is unnecessary because people are going into the library and looking for a book at their own risk. Meaning that if someone goes to the library looking for a certain book and they pick up one they find as offensive, it could be a good book for someone else. Do all books that are considered 'offensive' have to be fiction? No, not all books have to be fiction if they are offensive. This does not mean that there aren't books out there like that. Cultural books or magazines from other countries or of a certain topic can sometimes be very graphic and have language that is only appropriate for certain ages. Everywhere in the @CAPS1 no matter where you are there are going to be things that could either interest you or be offensive to you. Everybody has there own opinion on the matter. The cultural @CAPS3 in the library are just showing how the people of othere countries live and act. It is not opinions or false claims in these @CAPS3, only fact. So cultural @CAPS3 should not be censored, although it could have a section just for that type of material. History books can be one of those @CAPS3 that really depends on your opinion or what you were raised in. Religion is one thing that history books can really raise offense to people because it could have some of the facts wrong about that type of religion. Some people would get very upset about how it was wrong because they are teaching the kids wrong about religion. Race and origin are another problem with some people.  History books and elder's stories can always somehow be mixed and could cause trouble.  For example if a @CAPS1 @CAPS2 @NUM1 veteran told a story about what happened in a certain area; the history book could tell a completely different story. History books should not be censored because it is facts and teaching kids on what has happened in the past and how people survived. My views on the censorship of libraries is that there should not be any of it. Maybe the library could make a section for what people might think is 'offensive.'  @CAPS3 or books should definately not be taken off of the shelves though, because one man's offense is another man's great read">Should there be censorship in libraries...</option>
+                <option value="The time I was patient was whene I went to the @CAPS1.B.I @CAPS2. My dad went there and he did a bunch of training, he was there for like @NUM1 months. At the end if they made  it through they got a award. So there was kind of a lot of  people. We had to dress really nice. We had to sit through all the people getting awards that we didnt even know. The worst part was they gave speeches. Then after what seemed like hours my dad got up! I was so happy he got his award! Then we got to leave. That was the time I had to be patient.">The time I was patient...</option>
+                <option value="I feel that the author concludes the story with this phrase as a way of showing how Saeng is adopting to her new home, yet still valueing her old one. The gist of the sentence is that Saeng will take her test again in the spring, showing her perseverance. However, the sentence also shows how Saeng is coming to know her new land. She says,”when the snows melt and the geese return” this is important because the geese and the snow are of her now home, and she now accepts them. However, Saeng also says, “when this hibiscus is budding, and this shows how Saeng is still thinking of her old home, because the plant is her connection to the memories of Vietnam. Therefore, I feel that the author is showing how Saeng is growing up and living with changes in her life by ending the story with this statement.">Should there be censorship in libraries...</option>
+                <div class="invalid-feedback">
+                    Please select a valid essay.
+                </div>
+            </select>
+        </div>
+        <div class="mb-3">
+            <!--        <label for="validationTextarea">Textarea</label>-->
 
-    <textarea name="essay" rows="8" cols="37"></textarea>
+            <textarea name="essay" class="form-control" rows=8 id="validationTextarea" placeholder="Enter your essay or select one from the dropdown" required></textarea>
+        </div>
+        <center>
+        <button type="submit" class="btn btn-primary" >Predict
+        </button>
+        </center>
+        <center>
+            {{ rater1_score }}
+        </center>
+    </div>
 
-    <button type="submit" class="button buttonBlue">Predict
-        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-    </button> {{ rater1_score }}
 
 </form>
-<br>
 </div>
-<footer>
-    <a href="https://github.com/tanmaypandey7" target="_blank"><img src="https://image.flaticon.com/icons/svg/25/25231.svg"></a>
-    <p>You Gotta Love <a href="https://github.com/tanmaypandey7" target="_blank">Github</a></p>
-</footer>
 </body>
-
 </html>
+
+<script>
+    $('#essays').on('change', function(){
+            $('#validationTextarea').val($(this).val());
+    })
+    // init
+    $('#essays').change();
+</script>
