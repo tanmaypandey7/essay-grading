@@ -16,7 +16,6 @@ Pre-trained models can be downloaded from [here](https://drive.google.com/drive/
 ```
 sudo service docker start
 ```
-Run one of the three commands-
 
 #### Run Docker Model -
 ##### GPU 
