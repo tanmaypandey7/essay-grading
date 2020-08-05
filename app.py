@@ -70,13 +70,13 @@ def rater2():
 @app.route('/rater', methods=['GET', 'POST'])
 def rater():
     data = request.form['essay']
-    SERVER_ENDPOINT1 = 'http://0.0.0.0:8000/rater1'
+    SERVER_ENDPOINT1 = 'http://0.0.0.0:8080/rater1'
     r1 = requests.post(
         SERVER_ENDPOINT1,
         json={'essay': data})
     score1 = json.loads(r1.text)['result']['predictions'][0][0]
 
-    SERVER_ENDPOINT2 = 'http://0.0.0.0:8000/rater2'
+    SERVER_ENDPOINT2 = 'http://0.0.0.0:8080/rater2'
     r2 = requests.post(
         SERVER_ENDPOINT2,
         json={'essay': data})
