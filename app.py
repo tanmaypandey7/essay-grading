@@ -18,9 +18,9 @@ app = Flask(__name__)
 
 @app.route('/rater1', methods=['GET', 'POST'])
 def rater1():
-    data = request.form['essay']
+    data = request.get_json()
     SERVER_ENDPOINT = 'http://localhost:8501/v1/models/rater1:predict'
-    essay = data
+    essay = data['essay']
 
     with open('input/tokenizer_essays.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
@@ -39,14 +39,12 @@ def rater1():
         SERVER_ENDPOINT,
         json=payload)
 
-    score = round(json.loads(r.content)['predictions'][0][0]*10, 1)
-
-    return render_template('index.html', rater1_score='Rater 1 scored {}'.format(score))
+    return jsonify({'result': json.loads(r.content)}), 201
 
 
 @app.route('/rater2', methods=['GET', 'POST'])
 def rater2():
-    data = request.form['essay']
+    data = request.get_json()
     SERVER_ENDPOINT = 'http://localhost:8501/v1/models/rater2:predict'
     essay = data['essay']
 
@@ -67,10 +65,24 @@ def rater2():
         SERVER_ENDPOINT,
         json=payload)
 
-    score = round(json.loads(r.content)['predictions'][0][0]*10, 1)
+    return jsonify({'result': json.loads(r.content)}), 201
 
-    return render_template('index.html', rater2_score='Rater 2 scored {}'.format(score))
+@app.route('/rater', methods=['GET', 'POST'])
+def rater():
+    data = request.form['essay']
+    SERVER_ENDPOINT1 = 'http://0.0.0.0:8000/rater1'
+    r1 = requests.post(
+        SERVER_ENDPOINT1,
+        json={'essay': data})
+    score1 = json.loads(r1.text)['result']['predictions'][0][0]
 
+    SERVER_ENDPOINT2 = 'http://0.0.0.0:8000/rater2'
+    r2 = requests.post(
+        SERVER_ENDPOINT2,
+        json={'essay': data})
+    score2 = json.loads(r2.text)['result']['predictions'][0][0]
+
+    return render_template('index.html', rater_score=f'Rater 1 scored {round(score1*10, 1)} and Rater 2 scored {round(score2*10, 1)} ')
 
 
 @app.route('/')
@@ -78,4 +90,4 @@ def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=8080, debug=True)
