@@ -18,25 +18,16 @@ sudo service docker start
 ```
 Run one of the three commands-
 
-#### Single model -
-```
-sudo docker run -p 8500:8500 -p 8501:8501 --mount type=\
-bind,source=$(pwd)/models/normalised_rater2_domain1,\
-target=/models/normalised_rater2_domain1/ -e MODEL_NAME=normalised_rater2_domain1 \
--t tensorflow/serving:latest-gpu
-```
-
-#### Multi-model -
+#### Run Docker Model -
+##### GPU 
 ```
 docker run -t --rm --gpus all --name=tf-serving -p  8501:8501     \
 -v "$(pwd)/models:/models/" tensorflow/serving:latest-gpu   \
      --model_config_file=/models/models.config
 ```
-
-#### Multi-Model + Batching Config
+##### CPU 
 ```
-docker run -t --rm --gpus all --name=tf-serving -p  8501:8501 \
--v "$(pwd)/models:/models/" tensorflow/serving:latest-gpu \
-    --model_config_file=/models/models.config --enable_batching=true \
---batching_parameters_file=/models/batch_config/batching_parameters.txt
+docker run -p  8501:8501 \
+-v "$(pwd)/models:/models/" tensorflow/serving:latest   \
+     --model_config_file=/models/models.config
 ```
