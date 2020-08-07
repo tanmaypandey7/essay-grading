@@ -16,7 +16,7 @@ import numpy as np
 app = Flask(__name__)
 
 
-@app.route('/rater1', methods=['GET', 'POST'])
+@app.route('/rater1', methods=['POST'])
 def rater1():
     data = request.get_json()
     SERVER_ENDPOINT = 'http://localhost:8501/v1/models/rater1:predict'
@@ -42,7 +42,7 @@ def rater1():
     return jsonify({'result': json.loads(r.content)}), 201
 
 
-@app.route('/rater2', methods=['GET', 'POST'])
+@app.route('/rater2', methods=['POST'])
 def rater2():
     data = request.get_json()
     SERVER_ENDPOINT = 'http://localhost:8501/v1/models/rater2:predict'
@@ -67,7 +67,7 @@ def rater2():
 
     return jsonify({'result': json.loads(r.content)}), 201
 
-@app.route('/rater', methods=['GET', 'POST'])
+@app.route('/rater', methods=['POST'])
 def rater():
     data = request.form['essay']
     SERVER_ENDPOINT1 = 'http://0.0.0.0:8080/rater1'
