@@ -11,21 +11,23 @@ Pre-trained models can be downloaded from [here](https://drive.google.com/drive/
 
 ## Usage
 
-### app.py
-#### Start Docker
+In 1st Terminal
+
 ```
-sudo service docker start
+git clone https://github.com/tanmaypandey7/essay-grading
+cd essay-grading
+pip install -r requirements.txt
+python app.py
 ```
 
-#### Run Docker Model -
-##### GPU 
+In 2nd Terminal
 ```
+sudo service docker start
+# For GPU
 docker run -t --rm --gpus all --name=tf-serving -p  8501:8501     \
 -v "$(pwd)/models:/models/" tensorflow/serving:latest-gpu   \
      --model_config_file=/models/models.config
-```
-##### CPU 
-```
+# For CPU
 docker run -p  8501:8501 \
 -v "$(pwd)/models:/models/" tensorflow/serving:latest   \
      --model_config_file=/models/models.config
